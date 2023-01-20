@@ -3,10 +3,12 @@ const path= require('path');
 
 const app = express();
 const gameRouter = require('./routes/gameRoute');
+const accessorieRouter = require('./routes/accessorieRoute');
 
 app.use(express.json());
 
 app.use('/game', gameRouter);
+app.use('/accessorie', accessorieRouter );
 
 //error handler
 app.use(function (err, req, res, next) {
