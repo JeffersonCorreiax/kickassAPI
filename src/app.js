@@ -4,11 +4,15 @@ const path= require('path');
 const app = express();
 const gameRouter = require('./routes/gameRoute');
 const accessorieRouter = require('./routes/accessorieRoute');
+const usuarioRouter = require('./routes/usuarioRoute');
+const emailRouter = require('./routes/emailRoute');
 
 app.use(express.json());
 
 app.use('/game', gameRouter);
 app.use('/accessorie', accessorieRouter );
+app.use('/usuario', usuarioRouter);
+app.use('/', emailRouter);
 
 //error handler
 app.use(function (err, req, res, next) {
