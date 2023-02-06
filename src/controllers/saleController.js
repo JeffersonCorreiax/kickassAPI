@@ -1,9 +1,9 @@
 const db = require('../database/models');
-const Accessorie = db.Accessorie;
+const Sale = db.Sale;
 
-const accessorieController = {
+const saleController = {
     list: (req, res) => {
-        Accessorie.findAll()
+        Sale.findAll()
         .then(games => {
             res.status(200).json(games)
         })
@@ -12,8 +12,8 @@ const accessorieController = {
         })
 
     },
-    getProduct: (req, res) => {
-        Accessorie.findByPk(req.params.id)
+    getSale: (req, res) => {
+        Sale.findByPk(req.params.id)
         .then(games => {
            if(!games){
             res.status(404).json(games) //404 not found
@@ -26,8 +26,8 @@ const accessorieController = {
         })
 
     },
-    createProduct: (req, res) => {
-        Accessorie.create(req.body)
+    createSale: (req, res) => {
+        Sale.create(req.body)
         .then(games => {
             res.status(201).json(games)
         })
@@ -35,11 +35,11 @@ const accessorieController = {
             res.status(400).json(err) //400 BAD request
         })
     },
-    updateProduct: (req, res) => {
-        Accessorie.update(req.body,{
+    updateSale: (req, res) => {
+        Sale.update(req.body,{
                 
             where : {
-                id_games: req.params.id
+                id_sales: req.params.id
             }    
         })
         .then(games => {
@@ -50,10 +50,10 @@ const accessorieController = {
         })
 
     },
-    deleteProduct: (req, res) => {
-        Accessorie.destroy({
+    deleteSale: (req, res) => {
+        Sale.destroy({
             where : {
-                id_games: req.params.id
+                id_sales: req.params.id
             }
         })
         .then(games => {
@@ -65,4 +65,4 @@ const accessorieController = {
     }
 }
 
-module.exports = accessorieController;
+module.exports = saleController;
