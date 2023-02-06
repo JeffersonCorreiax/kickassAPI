@@ -6,6 +6,7 @@ const gameRouter = require('./routes/gameRoute');
 const usuarioRouter = require('./routes/usuarioRoute');
 const emailRouter = require('./routes/emailRoute');
 const saleRouter = require('./routes/saleRoute');
+const contactRouter = require('./routes/contactRoute');
 
 
 app.use(express.json());
@@ -14,6 +15,7 @@ app.use('/game', gameRouter);
 app.use('/usuario', usuarioRouter);
 app.use('/', emailRouter);
 app.use('/sale', saleRouter);
+app.use('/contact', contactRouter)
 
 
 //error handler
