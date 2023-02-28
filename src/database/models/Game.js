@@ -1,5 +1,5 @@
 const { sequelize, DataTypes } = require("sequelize");
-
+//ss
 
 module.exports = (sequelize, DataTypes) => {
     const Game = sequelize.define(
